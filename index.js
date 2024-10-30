@@ -30,6 +30,8 @@ const pool = createPool({
 // Middleware
 app.use(json());
 
+app.get("/", (req, res) => res.send("Express on Vercel Yes!"));
+
 // Test database connection
 pool.getConnection()
   .then(conn => {
