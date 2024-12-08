@@ -13,13 +13,8 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'dist')));
-
 app.get("/", (req, res) => res.send("Express on Vercel Nebo."));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 const port = process.env.PORT || 3000;
